@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/pages/logging_page.dart';
 import 'package:hello_flutter/pages/second_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -83,7 +84,17 @@ class _MyHomePageState extends State<MyHomePage> {
               },
               child: const Text('Go to Second Page'),
             ),
-
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => LoggingPage(count: _counter),
+                  ),
+                );
+              },
+              child: const Text('Go to Logging Page'),
+            ),
           ],
         ),
       ),
